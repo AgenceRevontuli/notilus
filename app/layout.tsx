@@ -1,5 +1,6 @@
 import './globals.css';
 import { Header, Footer } from './components/layout/Layout'
+import Provider from './provider';
 
 export const metadata = {
   title: 'Notilus, Expérience en prise de notes',
@@ -14,9 +15,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="font-sans">
-        <Header />
-          {children}
-        <Footer />
+        <Provider>
+          <Header />
+            {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   )
