@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link'
+import Link from 'next/link';
+import UserNav from './UserNav';
 
 export const Header = () => {
     return(
@@ -16,8 +17,7 @@ export const Header = () => {
                     </Link>
                 </div>
                 <ul className="flex flex-row gap-5">
-                    <li>Home</li>
-                    <li>Mes notes</li>
+                    <UserNav />
                 </ul>
             </nav>
         </header>
