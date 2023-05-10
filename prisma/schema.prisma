@@ -12,20 +12,21 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
-  firstName     String?
-  lastName      String?
-  displayName   String?
-  createdAt     DateTime  @default(now())
-  notes         Note[]
-  profile       Profile?
-  name          String?
-  emailVerified DateTime?
-  image         String?
-  updatedAt     DateTime  @updatedAt
-  accounts      Account[]
-  sessions      Session[]
+  id             String    @id @default(cuid())
+  email          String    @unique
+  hashedPassword String?
+  firstName      String?
+  lastName       String?
+  displayName    String?
+  createdAt      DateTime  @default(now())
+  notes          Note[]
+  profile        Profile?
+  name           String?
+  emailVerified  DateTime?
+  image          String?
+  updatedAt      DateTime  @updatedAt
+  accounts       Account[]
+  sessions       Session[]
 }
 
 model Profile {

@@ -1,25 +1,16 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import UserNav from './UserNav';
+import NavBar from '../navbar/NavBar';
+import { safeUser } from '@/app/types';
 
-export const Header = () => {
+interface HeaderProps {
+    currentUser: safeUser | null
+}
+
+export const Header: React.FC<HeaderProps> = ({
+    currentUser
+}) => {
     return(
-        <header className="p-12">
-            <nav className="flex flex-row justify-between items-center">
-                <div>
-                    <Link href="/">
-                        <Image
-                            src="revontuli-logo.svg"
-                            width={65}
-                            height={6}
-                            alt="Logo de Revontuli"
-                        />
-                    </Link>
-                </div>
-                <ul className="flex flex-row gap-5">
-                    <UserNav />
-                </ul>
-            </nav>
+        <header className="fixed w-full bg-white z-10 shadow-sm">
+            <NavBar currentUser={currentUser} /> 
         </header>
     )
 }
