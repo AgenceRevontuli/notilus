@@ -2,23 +2,26 @@
 
 interface MenuItemsProps {
     onClick: () => void;
-    label: string
+    label: string,
+    addonClassName?: string
 }
 
  const MenuItems: React.FC<MenuItemsProps> = ({
     onClick, 
-    label
+    label,
+    addonClassName
  }) => {
   return (
     <div 
     onClick={onClick}
-    className="
+    className={`
         px-4
         py-3
         hover:bg-neutral-100
         transition
         font-semibold
-    ">
+        ${addonClassName}
+    `}>
       {label}
     </div>
   )

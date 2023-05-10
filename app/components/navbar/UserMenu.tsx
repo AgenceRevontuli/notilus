@@ -7,6 +7,7 @@ import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
 import { signOut } from 'next-auth/react'
 import { safeUser } from '@/app/types'
+import Link from 'next/link'
 
 interface UserMenuProps {
     currentUser?: safeUser | null
@@ -26,6 +27,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   return (
     <div className="relative">
         <div className="flex flex-row items-center gap-3">
+            <Link href="/notes">
             <div
                 onClick={() => {}}
                 className="
@@ -41,8 +43,9 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 cursor-pointer
                 "
             >
-                Mon compte
+                Mon espace de notes
             </div>
+            </Link>
             <div
                 onClick={toggleOpen}
                 className="
@@ -99,6 +102,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         <MenuItems
                             onClick={() => signOut()}
                             label="Déconnexion"
+                            addonClassName="text-red-500"
                         />
                     </>
                     ) : (

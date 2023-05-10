@@ -4,11 +4,12 @@ import { IconType } from 'react-icons'
 
 interface ButtonProps {
     label: string
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
     disabled?: boolean
     outline?: boolean
     small?: boolean
     icon?: IconType 
+    halfSize?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,7 +18,8 @@ const Button: React.FC<ButtonProps> = ({
     disabled,
     outline,
     small,
-    icon: Icon
+    icon: Icon,
+    halfSize
 }) => {
     return(
         <button 
@@ -38,6 +40,7 @@ const Button: React.FC<ButtonProps> = ({
             ${small ? 'text-sm' : 'text-md'}
             ${small ? 'font-light' : 'font-semibold'}
             ${small ? 'border-[1px]' : 'border-2'}
+            ${halfSize ? 'w-3/6' : ' '}
         `}>
             {Icon && (
                 <Icon 
