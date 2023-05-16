@@ -1,6 +1,5 @@
 import getCurrentUser from "../actions/getCurrentUser"
 import Unauthentificate from "../components/Unauthentificate"
-import Button from "../components/Button"
 import CategoryList from "../components/Notes/CategoryList"
 import Link from 'next/link'
 

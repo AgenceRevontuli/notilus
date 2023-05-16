@@ -2,7 +2,7 @@ import NavBar from '../navbar/NavBar';
 import { safeUser } from '@/app/types';
 
 interface HeaderProps {
-    currentUser: safeUser | null
+    currentUser?: safeUser | null
 }
 
 export const Header: React.FC<HeaderProps> = ({

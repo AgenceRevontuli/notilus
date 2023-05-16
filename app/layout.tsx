@@ -26,7 +26,7 @@ export default async function RootLayout({
           <RegisterModal />
           <Header currentUser={currentUser} />
             {children}
-          <Footer />
+          <Footer />        
         </Provider>
       </body>
     </html>
