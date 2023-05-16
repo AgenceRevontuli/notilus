@@ -1,6 +1,7 @@
 'use server'
 import { prisma } from "../lib/prismadb"
 
+// Server Action for publish a new note 
 const postNote = async (title: string, content: string) => {
     const note = await prisma.note.create({
         data: {
@@ -14,5 +15,10 @@ const postNote = async (title: string, content: string) => {
         },
     })
 }
-
 export default postNote
+
+
+// Server Action for fetch user articles
+export const getNotes = async () => {
+    const notes = await prisma.note.findMany()
+}

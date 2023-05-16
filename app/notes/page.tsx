@@ -2,6 +2,7 @@ import getCurrentUser from "../actions/getCurrentUser"
 import Unauthentificate from "../components/Unauthentificate"
 import CategoryList from "../components/Notes/CategoryList"
 import Link from 'next/link'
+import NotesList from "../components/Notes/NotesList"
 
 export default async function Note() {
   const currentUser = await getCurrentUser()
@@ -43,7 +44,7 @@ export default async function Note() {
           <CategoryList />
         </div>
         <div className="w-4/6 py-4 px-12">
-          hello
+          <NotesList />
         </div>
       </div>
     </>
